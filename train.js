@@ -1,20 +1,41 @@
+// B-TASK: 
+
+// Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+// MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+//Yechish:
+let result = 0;
+function countDigits(a) {
+    const string = a.split("");
+    for(i = 0; i <= string.length; i++){
+        if(string[i] >= 0){
+            result++;
+        };
+    };
+    console.log(result);
+}
+countDigits("ad2a54y79wet0sfgb9")
+
+
+
+
 //A-TASK: 
 
 // Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
 // MASALAN countLetter("e", "engineer") 3ni return qiladi.
 
 //masalani yechimi:
-let result = 0;
-function countLetter(letter, word) {
-    const array = word.split("");
-    for(i = 0; i <= array.length; i++){
-        if(letter == array[i]){
-        result++;
-        };
-    }
-    console.log(result);
-};
-countLetter("e", "engineer");
+// let result = 0;
+// function countLetter(letter, word) {
+//     const array = word.split("");
+//     for(i = 0; i <= array.length; i++){
+//         if(letter == array[i]){
+//         result++;
+//         };
+//     }
+//     console.log(result);
+// };
+// countLetter("e", "engineer");
 
 
 
@@ -80,7 +101,9 @@ countLetter("e", "engineer");
 //         });
 //     }
 // };
+
 // call via then/catch
+
 // console.log('passed here 0');
 // maslahatBering(35)
 //     .then((data) => {
