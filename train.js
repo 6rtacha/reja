@@ -1,20 +1,38 @@
+// C-TASK: 
+
+// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+function checkContent(a, b) {
+    const a_sorted = a.toLowerCase().split("").sort().toString();
+    const b_sorted = b.toLowerCase().split("").sort().toString();
+    if(a_sorted == b_sorted){
+        console.log("true"); 
+    }else{
+        console.log("false");
+        
+    }
+}
+checkContent("mitgroup", "gmtiprou");
+
+
 // B-TASK: 
 
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 // MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 
 //Yechish:
-let result = 0;
-function countDigits(a) {
-    const string = a.split("");
-    for(i = 0; i <= string.length; i++){
-        if(string[i] >= 0){
-            result++;
-        };
-    };
-    console.log(result);
-}
-countDigits("ad2a54y79wet0sfgb9")
+// let result = 0;
+// function countDigits(a) {
+//     const string = a.split("");
+//     for(i = 0; i <= string.length; i++){
+//         if(string[i] >= 0){
+//             result++;
+//         };
+//     };
+//     console.log(result);
+// }
+// countDigits("ad2a54y79wet0sfgb9")
 
 
 
