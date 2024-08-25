@@ -6,7 +6,7 @@ const fs = require("fs");
 
 //MongoDb chaqirish
 const db = require("./server").db();
-
+const mongodb = require("mongodb");
 // let user;
 // fs.readFile("database/user.json", "utf-8", (err, data) => {
 //     if(err) {
@@ -43,7 +43,14 @@ app.post("/create-item", (req, res) => { // head body url
     });
     // res.json({ test: "succes" });
     
-})
+});
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne({ _id: new mongodb.ObjectId(id) }, function(err, data) {
+        res.json({ state: "succes"});
+    })
+});
 
  app.get("/", function(req, res) {
     console.log("user entered /");
