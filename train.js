@@ -1,19 +1,70 @@
+// D-TASK: 
+
+// Shunday class tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+// MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+const moment = require("moment");
+class Shop {
+    non;
+    lagmon;
+    cola;
+
+    constructor(non, lagmon, cola) {
+        this.non = non;
+        this.lagmon = lagmon;
+        this.cola = cola;
+    }
+    qoldiq() {
+        console.log(`Hozir ${moment().format('HH:mm:ss')}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`);
+        
+    }
+    sotish(item, number) {
+        // console.log(`Hozir ${moment().format('HH:mm:ss')}da`);
+        if(item == 'non' && this.non > number){
+            this.non -= number;
+        }else if(item == 'lagmon' && this.lagmon > number){
+            this.lagmon -= number;
+        }else if(item == 'cola' && this.cola > number){
+            this.cola -= number;
+        } else{
+            console.log("Yetarlicha mahsulot mavjud emas");
+            
+        }
+        
+    }
+    qabul(item, number) {
+        // console.log(`Hozir ${moment().format('HH:mm:ss')}da`);
+        if(item == 'non'){
+            this.non += number;
+        }else if(item == 'lagmon'){
+            this.lagmon += number;
+        }else if (item == 'cola'){
+            this.cola += number;
+        }
+    }
+    
+    
+}
+const shop = new Shop(4, 5, 2);
+// shop.sotish('non', 3);
+// shop.qabul('cola', 4);
+shop.qoldiq();
+
 // C-TASK: 
 
 // Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
 // MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
 
-function checkContent(a, b) {
-    const a_sorted = a.toLowerCase().split("").sort().toString();
-    const b_sorted = b.toLowerCase().split("").sort().toString();
-    if(a_sorted == b_sorted){
-        console.log("true"); 
-    }else{
-        console.log("false");
+// function checkContent(a, b) {
+//     const a_sorted = a.toLowerCase().split("").sort().toString();
+//     const b_sorted = b.toLowerCase().split("").sort().toString();
+//     if(a_sorted == b_sorted){
+//         console.log("true"); 
+//     }else{
+//         console.log("false");
         
-    }
-}
-checkContent("mitgroup", "gmtiprou");
+//     }
+// }
+// checkContent("mitgroup", "gmtiprou");
 
 
 // B-TASK: 
