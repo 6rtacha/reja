@@ -1,21 +1,20 @@
 console.log('Web serverni boshlash');
 const express = require("express");
 const app = express();
-const res = require("express/lib/response");
 const fs = require("fs");
 
 //MongoDb chaqirish
 const db = require("./server").db();
 const mongodb = require("mongodb");
-// let user;
-// fs.readFile("database/user.json", "utf-8", (err, data) => {
-//     if(err) {
-//         console.log("ERROR:", err);
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+    if(err) {
+        console.log("ERROR:", err);
         
-//     }else {
-//         user = JSON.parse(data);
-//     }
-// });
+    }else {
+        user = JSON.parse(data);
+    }
+});
 // 1 Kirish code
 app.use(express.static("public")); // har qanday browserd kirib kelayotgan requestlar uchun public folder ochiq
 app.use(express.json());  // kirib kelayot json formatidagi data ni object holatiga ogirib beradi
@@ -85,8 +84,8 @@ app.post("/delete-all", (req, res) => {
     
  }); 
 
-//   app.get('/author', (req, res) => {
-//     res.render("author", { user: user });
-//   })
+  app.get('/author', (req, res) => {
+    res.render("author", { user: user });
+  })
 
 module.exports = app;

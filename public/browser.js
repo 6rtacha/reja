@@ -1,4 +1,3 @@
-
 console.log('Fronted js ishga tushdi');
 
 function itemTemplate(item) {
