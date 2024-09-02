@@ -1,28 +1,45 @@
+// G-TASK: 
+
+// Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+// MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
+
+function getHighestIndex(array) {
+    let max = array[0];
+    for(i = 1; i < array.length; i++) {
+        if(array[i] > max){
+            max = array[i];
+        }
+    }
+    console.log(array.indexOf(max));
+}
+getHighestIndex([5, 21, 12, 21, 8]);
+
+
 // F-TASK: 
 
 // Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true, qatnashmasa false qaytarishi kerak.
 // MASALAN: getReverse("hello") return true return qiladi
 
 
-function getReverse(a) {
-    const array = a.toLowerCase().split("").sort();
+// function getReverse(a) {
+//     const array = a.toLowerCase().split("").sort();
     
-    let array1 = [];
-    for(i = 0; i < array.length; i++){
+//     let array1 = [];
+//     for(i = 0; i < array.length; i++){
         
-        if(array[i] == array[i+1]){
-            return true;
+//         if(array[i] == array[i+1]){
+//             return true;
             
-        }
-        else{
-            array1.push(array[i]);
-        }
-    }
+//         }
+//         else{
+//             array1.push(array[i]);
+//         }
+//     }
     
-    return false;
-}
-let result = getReverse("hello");
-console.log(result);
+//     return false;
+// }
+// let result = getReverse("hello");
+// console.log(result);
 
 
 // E-TASK: 
